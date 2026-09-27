@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Priya Fashion - Aari Work & Machine Embroidery</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Specific CSS for the Gallery page grid */
+        .full-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding-bottom: 50px;
+        }
+
+        .gallery-item-full {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item-full img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item-full img:hover {
+            opacity: 0.9;
+        }
+        
+        .gallery-caption {
+            padding: 15px;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .gallery-caption h4 {
+            color: #7b003a;
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+        
+        .gallery-caption p {
+            margin: 0;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        /* Mobile adjustment for gallery */
+        @media (max-width: 768px) {
+            .full-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item-full img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <h1 class="logo">Priya Fashion</h1>
+            <p class="tagline">KTC Nagar, Tirunelveli - Artistry in Every Stitch</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="gallery.html" style="background-color: #b3396d;">Gallery</a></li> 
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-page-content container">
+            <h2 style="text-align: center; padding-top: 40px; margin-bottom: 30px;">Our Complete Portfolio of Designs</h2>
+
+            <p style="text-align: center; font-size: 1.1em; color: #555;">Browse our collections of intricate Handcrafted Aari Work and precise Computerized Machine Embroidery designs for blouses and Sudithars.</p>
+            
+            <h3 style="color: #7b003a; margin-top: 40px; border-bottom: 2px solid #f0e0e0; padding-bottom: 10px;">Handcrafted Aari Work Blouses</h3>
+
+            <div class="full-gallery-grid">
+                <div class="gallery-item-full">
+                    <img src="assets/images/OIP (1).jpeg" alt="Aari Work Blouse Design 1" class="design-item">
+                    <div class="gallery-caption">
+                        <h4>Bridal Peacock Aari Blouse</h4>
+                        <p>Detailed Zari and Kundan work on silk.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-full">
+                    <img src="assets/images/OIP (2).jpeg" alt="Simple Aari Work Blouse">
+                    <div class="gallery-caption">
+                        <h4>Elegant Everyday Aari Blouse</h4>
+                        <p>Thread and beadwork for light occasions.</p>
+                    </div>
+                </div>
+                </div>
+            
+            <h3 style="color: #7b003a; margin-top: 40px; border-bottom: 2px solid #f0e0e0; padding-bottom: 10px;">Computerized Machine Embroidery & Sudithars</h3>
+
+            <div class="full-gallery-grid">
+                <div class="gallery-item-full">
+                    <img src="assets/images/OIP (3).jpeg" alt="Machine Embroidery Floral Blouse">
+                    <div class="gallery-caption">
+                        <h4>Intricate Machine Floral Design</h4>
+                        <p>High-precision floral motifs on cotton.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-full">
+                    <img src="assets/images/OIP (4).jpeg" alt="Designer Sudithar Set">
+                    <div class="gallery-caption">
+                        <h4>Custom Designer Anarkali Set</h4>
+                        <p>Perfectly tailored fit with matching dupatta.</p>
+                    </div>
+                </div>
+                </div>
+            
+        </section>
+        
+        <div style="text-align: center; padding: 30px;">
+            <a href="https://wa.me/916383848127?text=I%20loved%20the%20designs%20on%20your%20Gallery%20page!%20I%20want%20to%20place%20an%20order." 
+               class="whatsapp-button" target="_blank">
+               💬 Contact Now to Discuss Your Design!
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Priya Fashion. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

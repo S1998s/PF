@@ -1,0 +1,541 @@
+/* --- GLOBAL STYLES & RESET --- */
+body {
+    font-family: 'Times New Roman', serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc; 
+    color: #2C2C2C; /* Dark charcoal text */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #5F184B; /* Deep Plum/Burgundy Brand Color */
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    margin-top: 0;
+    border-bottom: 3px solid #e0c8d9; /* Lighter, complementary border */
+    display: inline-block;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background-color: #5F184B;
+    color: white;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.8em;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+.main-nav {
+    background-color: #9B498F; /* Muted Magenta */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul li a {
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.main-nav ul li a:hover {
+    background-color: #B89A6A; /* Soft Antique Gold on hover */
+    color: #2C2C2C;
+}
+
+/* --- SLIDESHOW SECTION (HERO) --- */
+
+.hero-slideshow {
+    height: 65vh; /* Slightly taller hero for impact */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    animation: slide-animation 15s infinite; 
+}
+
+/* --- SLIDESHOW SECTION (HERO) --- */
+
+/* ... (Existing hero-slideshow and slides code) ... */
+
+.slide {
+    width: 33.33%;
+    height: 100%;
+    
+    /* ADD/UPDATE THIS LINE: Sets a soft background color when the image fails to load */
+    background-color: #f5eef1; /* A soft, elegant rose-cream color */
+    
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+/* ... (Remaining slide-1, slide-2, slide-3 styles) ... */
+
+/* UPDATE: Reduce the intensity of the text overlay on the hero section
+   to allow the background color/image to show better. */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* CHANGE OPACITY FROM 0.5 to 0.3 for a lighter feel */
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ... (Remaining hero-overlay styles) ... */
+
+/* IMPORTANT: Placeholder for background images */
+.slide-1 { background-image: url('assets/images/slide1.jpg'); } 
+.slide-2 { background-image: url('assets/images/slide2.jpg'); }
+.slide-3 { background-image: url('assets/images/slide3.jpg'); }
+
+
+.hero-overlay h2 {
+    color: white;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    border-bottom: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+}
+
+@keyframes slide-animation {
+    0% { margin-left: 0; } 
+    30% { margin-left: 0; }
+    33% { margin-left: -100%; } 
+    63% { margin-left: -100%; }
+    66% { margin-left: -200%; } 
+    97% { margin-left: -200%; }
+    100% { margin-left: 0; }
+}
+
+/* --- BUTTON STYLES --- */
+.cta-button {
+    display: inline-block;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 30px; /* Modern pill shape */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button.primary {
+    background-color: #B89A6A; /* Soft Antique Gold */
+    color: #2C2C2C;
+}
+
+.cta-button.secondary {
+    background-color: #5F184B; /* Deep Plum */
+    color: white;
+    border: 2px solid #B89A6A;
+}
+
+.cta-button.primary:hover { 
+    background-color: #a3875d; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.cta-button.secondary:hover { 
+    background-color: #9B498F; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* --- GALLERY SECTION --- */
+.gallery-preview {
+    padding: 80px 0; /* More padding for breathing room */
+    text-align: center;
+    background-color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.design-item {
+    width: 100%;
+    height: 380px; /* Taller images */
+    object-fit: cover;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.design-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(95, 24, 75, 0.2);
+}
+
+.view-all-button {
+    margin-top: 50px;
+    color: #5F184B;
+    border: 2px solid #5F184B;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-all-button:hover {
+    background-color: #5F184B;
+    color: white;
+}
+
+/* --- SERVICES SECTION --- */
+.services-process {
+    padding: 80px 0;
+    background-color: #FFF7F9; /* Very light rose background */
+    text-align: center;
+}
+
+.service-intro {
+    font-size: 1.2em;
+    color: #4a4a4a;
+    max-width: 800px;
+    margin: 20px auto 60px auto;
+}
+
+.service-steps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap; 
+}
+
+.step {
+    flex: 1 1 200px;
+    max-width: 250px;
+    padding: 30px 25px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s;
+    border-top: 5px solid #9B498F; /* Accent line */
+}
+
+.step.embroidery-type {
+    max-width: 45%; 
+    flex: 1 1 45%;
+}
+
+.step h3 {
+    color: #9B498F; 
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    border-bottom: none;
+    font-size: 1.4em;
+}
+/* --- CONTACT SECTION (UPDATED STYLING) --- */
+.contact-info {
+    background-color: #FFF7F9; /* Light rose background for distinction */
+    padding: 80px 0;
+    text-align: center; /* Center content horizontally */
+}
+
+.contact-grid {
+    display: flex; /* Use flexbox for the main layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    text-align: left; /* Reset text alignment inside the grid items */
+}
+
+.contact-details {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.contact-details h2 {
+    text-align: left;
+}
+
+.contact-intro {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #2C2C2C;
+}
+
+.contact-icon {
+    font-size: 1.5em;
+    color: #9B498F; /* Use secondary brand color for icons */
+    margin-right: 15px;
+    width: 30px; /* fixed width for alignment */
+    text-align: center;
+}
+
+.contact-item a {
+    color: #5F184B; /* Brand color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: #9B498F;
+}
+
+/* Map/Visit Studio Styling */
+.contact-map-placeholder {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.map-image {
+    width: 100%;
+    height: 200px; /* Fixed height for image/map display */
+    object-fit: cover;
+    background-color: #e0e0e0;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.map-note {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* WhatsApp Button (Ensure existing styles are defined for a clean look) */
+.whatsapp-button {
+    /* Existing stylish button rules apply here */
+    margin-top: 30px; 
+}
+
+
+/* --- MOBILE RESPONSIVENESS UPDATE --- */
+
+@media (max-width: 768px) {
+    /* Force contact section to stack on mobile */
+    .contact-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contact-details, .contact-map-placeholder {
+        max-width: 100%; /* Full width on mobile */
+        padding-right: 0;
+    }
+    
+    .contact-details h2 {
+        text-align: center;
+    }
+    
+    .contact-details {
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center; /* Center the contact info vertically on mobile */
+    }
+
+    /* Ensure WhatsApp button remains full width */
+    .whatsapp-button {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.whatsapp-button {
+    /* Style remains WhatsApp Green for recognition */
+    background-color: #25D366; 
+    color: white;
+    padding: 15px 35px;
+    margin: 40px auto;
+    border-radius: 30px; 
+    font-size: 1.3em;
+    box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-3px);
+}
+
+.call-text, .email-text {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #4a4a4a;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #2C2C2C;
+    color: #fcfcfc;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* --- MEDIA QUERIES (Responsiveness) --- */
+
+@media (max-width: 768px) {
+    /* General Mobile Adjustments */
+    .container { padding: 0 15px; }
+    h2 { font-size: 2em; }
+    
+    /* Header/Nav */
+    .header-content { flex-direction: column; gap: 5px; }
+    .main-nav ul { flex-direction: column; align-items: center; }
+    .main-nav ul li a { padding: 8px 20px; width: 100%; }
+    
+    /* Hero */
+    .hero-slideshow { height: 50vh; }
+    .hero-overlay h2 { font-size: 2em; }
+    .hero-overlay p { font-size: 1.1em; }
+
+    /* Gallery */
+    .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
+    .design-item { height: 300px; }
+    
+    /* Services (Stacking Fixes) */
+    .service-steps { flex-direction: column; gap: 20px; }
+    .step, .step.embroidery-type { 
+        max-width: 100%; 
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+    
+    /* Contact */
+    .whatsapp-button { font-size: 1.1em; padding: 12px 25px; }
+}
+
+/* --- CSS Update for Map Embed --- */
+
+/* Remove the old .map-image rules if they exist */
+
+.map-iframe {
+    width: 100%;
+    height: 300px; /* Fixed height for map display */
+    border-radius: 5px;
+    /* Ensure the iframe itself looks clean */
+    display: block; 
+}
+
+/* --- BACK TO TOP BUTTON STYLES --- */
+
+.back-to-top-btn {
+    display: none; /* Initially hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from bottom */
+    right: 30px; /* Distance from right */
+    z-index: 99; /* High z-index to stay on top */
+    border: none;
+    outline: none;
+    background-color: #B89A6A; /* Soft Antique Gold */
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.back-to-top-btn:hover {
+    background-color: #5F184B; /* Deep Plum on hover */
+}
+/* --- STICKY WHATSAPP BUTTON --- */
+
+.whatsapp-sticky {
+    position: fixed; 
+    bottom: 80px; /* Position it above the "Back to Top" button */
+    right: 30px;
+    z-index: 999; 
+    background-color: #25D366; 
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.whatsapp-sticky:hover {
+    transform: scale(1.1); 
+}
+
+/* --- STICKY WHATSAPP BUTTON (UPDATED IMAGE SIZE) --- */
+
+.whatsapp-sticky img {
+    /* Reduced image size slightly to accommodate the padding/square background within the image file */
+    width: 30px; 
+    height: 30px;
+    /* Ensure the image itself is centered perfectly */
+    object-fit: contain; 
+}

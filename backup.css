@@ -1,0 +1,409 @@
+/* --- GLOBAL STYLES & RESET --- */
+body {
+    font-family: 'Times New Roman', serif; /* Elegant font choice */
+    margin: 0;
+    padding: 0;
+    background-color: #fcfcfc; 
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #7b003a; /* Deep Red/Maroon */
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    margin-top: 0;
+    border-bottom: 3px solid #f0e0e0;
+    display: inline-block;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background-color: #7b003a;
+    color: white;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.8em;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-style: italic;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.main-nav {
+    background-color: #5d002d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul li a {
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.main-nav ul li a:hover {
+    background-color: #c7923f; /* Gold accent on hover */
+}
+
+/* --- SLIDESHOW SECTION (HERO) --- */
+
+.hero-slideshow {
+    height: 60vh; /* Viewport height */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    width: 300%; /* 3 slides, so 300% */
+    height: 100%;
+    display: flex;
+    /* Key CSS for the automatic transition: */
+    animation: slide-animation 15s infinite; 
+}
+
+.slide {
+    width: 33.33%; /* Each slide takes up one-third of the 300% container */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+/* IMPORTANT: Replace the URLs below with the correct paths to your images */
+.slide-1 { background-image: url('assets/images/slide1.jpg'); } 
+.slide-2 { background-image: url('assets/images/slide2.jpg'); }
+.slide-3 { background-image: url('assets/images/slide3.jpg'); }
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h2 {
+    color: white;
+    font-size: 3em;
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+.hero-overlay p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Keyframes for CSS Slideshow Animation */
+@keyframes slide-animation {
+    0% { margin-left: 0; } /* Show Slide 1 */
+    30% { margin-left: 0; }
+    
+    33% { margin-left: -100%; } /* Transition to Slide 2 */
+    63% { margin-left: -100%; }
+    
+    66% { margin-left: -200%; } /* Transition to Slide 3 */
+    97% { margin-left: -200%; }
+    100% { margin-left: 0; } /* Loop back to Slide 1 */
+}
+
+/* --- BUTTON STYLES --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.cta-button.primary {
+    background-color: #c7923f; /* Gold accent */
+    color: white;
+}
+
+.cta-button.secondary {
+    background-color: #7b003a; /* Brand color */
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-button.primary:hover { background-color: #e0ac57; }
+.cta-button.secondary:hover { background-color: #5d002d; }
+
+
+/* --- GALLERY SECTION --- */
+.gallery-preview {
+    padding: 60px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.design-item {
+    width: 100%;
+    height: 350px; /* Fixed height for better presentation */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.design-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(123, 0, 58, 0.2);
+}
+
+.view-all-button {
+    margin-top: 40px;
+    color: #7b003a;
+    border: 2px solid #7b003a;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-all-button:hover {
+    background-color: #7b003a;
+    color: white;
+}
+
+/* --- SERVICES SECTION --- */
+.services-process {
+    padding: 60px 0;
+    background-color: #f9f4f5; /* Light blush background */
+    text-align: center;
+}
+
+.service-intro {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 800px;
+    margin: 20px auto 50px auto;
+}
+
+.service-steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.step {
+    flex: 1 1 200px; /* Allows for 4 or 5 steps across */
+    max-width: 280px;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.step.embroidery-type {
+    max-width: 40%; /* Make the two embroidery options slightly wider */
+    flex: 1 1 45%;
+}
+
+.step h3 {
+    color: #7b003a; 
+    margin-top: 0;
+    border-bottom: 2px solid #f0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-info {
+    background-color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366; 
+    color: white;
+    padding: 15px 30px;
+    margin: 30px auto;
+    text-decoration: none;
+    border-radius: 30px; /* Pill shape */
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 6px 10px rgba(37, 211, 102, 0.4);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+.call-text, .email-text {
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+/* --- MEDIA QUERIES (for Responsiveness) --- */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        font-size: 2.2em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav ul li a {
+        padding: 10px 20px;
+    }
+
+    .hero-overlay h2 {
+        font-size: 2em;
+    }
+    
+    .service-steps .step {
+        flex: 1 1 100%; /* Stack steps vertically on small screens */
+        max-width: 100%;
+    }
+    .step.embroidery-type {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+/* --- MEDIA QUERIES (for Responsiveness Fixes) --- */
+
+@media (max-width: 768px) {
+    
+    /* 1. Global Container Adjustment */
+    .container {
+        padding: 0 15px; /* Reduce horizontal padding on mobile */
+    }
+    
+    /* 2. Header and Navigation Fixes */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .logo {
+        font-size: 2em;
+    }
+
+    .tagline {
+        font-size: 0.8em;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+    }
+    
+    .main-nav ul li a {
+        padding: 8px 20px;
+        width: 100%; /* Makes links full width of the container */
+    }
+    
+    /* 3. Slideshow Fixes (Hero Section) */
+    .hero-slideshow {
+        height: 40vh; /* Reduce height on mobile for better viewing space */
+    }
+    
+    .hero-overlay h2 {
+        font-size: 1.8em; /* Smaller headline */
+    }
+    
+    .hero-overlay p {
+        font-size: 1em; /* Smaller body text */
+    }
+
+    /* 4. Gallery Grid Fixes */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Stack images in a single column */
+        gap: 20px;
+    }
+
+    .design-item {
+        height: 250px; /* Reduced image height */
+    }
+    
+    /* 5. Services Section Fixes (Crucial) */
+    .service-steps {
+        flex-direction: column; /* Stack all service steps vertically */
+        gap: 15px;
+    }
+
+    .step {
+        max-width: 100%; /* Allow steps to take full width */
+        margin: 0 auto;
+    }
+    
+    /* Ensure the split embroidery steps also take full width */
+    .step.embroidery-type {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
